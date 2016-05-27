@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "SecondViewController.h"
 #import "UIButton+More.h"
+#import "HYBNetworking.h"
+#import "UIImageView+WebCache.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIImageView *adImageView;
@@ -29,11 +31,20 @@
     [self.view addSubview:button];
     self.button = button;
     
+    
+    UIImageView *imageView = [UIImageView new];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://gaopinimages.com/imagesetsview/183/134202968196.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            
+        }
+    }];
+    [self.view addSubview:imageView];
+    imageView.backgroundColor = [UIColor redColor];
+    imageView.frame = CGRectMake(200, 250, 100, 100);
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
     
 }
 - (void)actionClick:(id)sender {

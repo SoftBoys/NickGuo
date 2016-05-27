@@ -1,2 +1,6 @@
+platform :ios, '8.0'
+pod 'MJExtension'
+pod 'MJRefresh'
 pod 'HYBNetworking', '~>3.1.0'
-pod 'SDWebImage'
+pod 'SDWebImage', '~>3.7'
+#pod 'AFNetworking', '~> 3.0'
